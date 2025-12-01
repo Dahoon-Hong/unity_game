@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Style src="/Assets/UIToolkit/ScoreStyle.uss" />
+    <ui:VisualElement name="ScoreContainer">
+        <ui:Label text="1. SCORE: " name="ScoreLabel" />
+        <ui:Label text="0" name="ScoreValue" />
+    </ui:VisualElement>
+</ui:UXML>
