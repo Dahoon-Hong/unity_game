@@ -5,14 +5,24 @@ public class EffectObject : MonoBehaviour
 {
     public float lifetime = 1f;
     public float fadeDuration = 0.5f;
+    public float initialUpwardVelocity = 5f;
+    public float gravity = 9.8f;
 
     private SpriteRenderer spriteRenderer;
+    private Vector3 velocity;
 
     void Start()
     {
         Debug.Log("EffectObject 시작");
         spriteRenderer = GetComponent<SpriteRenderer>();
+        velocity = Vector3.up * initialUpwardVelocity;
         StartCoroutine(FadeOutAndDestroy());
+    }
+
+    void Update()
+    {
+        velocity.y -= gravity * Time.deltaTime;
+        transform.position += velocity * Time.deltaTime;
     }
 
     private IEnumerator FadeOutAndDestroy()
