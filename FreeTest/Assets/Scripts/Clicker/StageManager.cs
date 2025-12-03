@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class StageManager : MonoBehaviour
 {
@@ -43,13 +44,13 @@ public class StageManager : MonoBehaviour
         // }
     }
 
-    private void HandleTargetClicked(Target target)
+    private void HandleTargetClicked(Target target, PointerEventData eventData)
     {
         Debug.Log("Target Clicked!");
 
         //Vector2 mousePosition = Mouse.current.position.ReadValue();
         //Vector2 worldPosition = mainCamera.ScreenToWorldPoint(mousePosition);
-        Vector2 worldPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Vector2 worldPosition = Camera.main.ScreenToWorldPoint(eventData.position);
         target.OnHit();
 
         if (effectPrefab != null)

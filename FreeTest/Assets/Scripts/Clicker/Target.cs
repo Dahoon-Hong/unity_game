@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 public class Target : MonoBehaviour, IPointerClickHandler, IPointerDownHandler
 {
 
-    public static event Action<Target> OnTargetClicked;
+    public static event Action<Target, PointerEventData> OnTargetClicked;
 
     public Sprite[] sprites;
     public float changeInterval = 1.0f;
@@ -47,13 +47,13 @@ public class Target : MonoBehaviour, IPointerClickHandler, IPointerDownHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("clicked");
-        OnTargetClicked?.Invoke(this); 
+        OnTargetClicked?.Invoke(this, eventData); 
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         Debug.Log("down");
-        OnTargetClicked?.Invoke(this); 
+        OnTargetClicked?.Invoke(this, eventData); 
     }
 
 
