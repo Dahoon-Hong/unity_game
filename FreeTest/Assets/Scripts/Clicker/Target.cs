@@ -12,6 +12,7 @@ public class Target : MonoBehaviour, IPointerClickHandler, IPointerDownHandler
 
     public Sprite[] sprites;
     public float changeInterval = 1.0f;
+    public int health = 100;
 
     private SpriteRenderer spriteRenderer;
     private int currentSpriteIndex = 0;
@@ -46,20 +47,21 @@ public class Target : MonoBehaviour, IPointerClickHandler, IPointerDownHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("clicked");
         OnTargetClicked?.Invoke(this, eventData); 
+        health -= 10;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("down");
-        OnTargetClicked?.Invoke(this, eventData); 
+        // OnTargetClicked?.Invoke(this, eventData); 
     }
 
 
     public void OnHit()
     {
-        Debug.Log("hit");
+        // Debug.Log("hit");
+        
+        // Debug.Log($"Remaining health: {health}");
 
     }
 }

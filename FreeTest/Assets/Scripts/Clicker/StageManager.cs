@@ -7,6 +7,7 @@ public class StageManager : MonoBehaviour
 {
     public GameObject targetPrefab;
     public GameObject effectPrefab;
+    public ScoreDisplayController scoreDisplayController;
 
     private GameObject currentTarget;
 
@@ -53,6 +54,16 @@ public class StageManager : MonoBehaviour
         Vector2 worldPosition = Camera.main.ScreenToWorldPoint(eventData.position);
         target.OnHit();
 
+        if (scoreDisplayController != null)
+        {
+            scoreDisplayController.UpdateHP(target.health);
+        }
+
+        if (target.health <= 0)
+        {
+            SpawnTarget();
+        }
+
         if (effectPrefab != null)
         {
             Instantiate(effectPrefab, worldPosition, Quaternion.identity);
@@ -75,6 +86,11 @@ public class StageManager : MonoBehaviour
         // For simplicity, spawning at a fixed position. 
         // This can be changed to a random position.
         currentTarget = Instantiate(targetPrefab, Vector3.zero, Quaternion.identity);
+        var targetComponent = currentTarget.GetComponent<Target>();
+        if(scoreDisplayController != null && targetComponent != null)
+        {
+            scoreDisplayController.UpdateHP(targetComponent.health);
+        }
         // currentTarget.SetActive(true);
 
         // // Reset target's health if it's being reused

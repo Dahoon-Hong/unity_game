@@ -1,31 +1,25 @@
 using UnityEngine;
 using UnityEngine.UIElements;
-using UnityEngine.InputSystem;
 
 public class ScoreDisplayController : MonoBehaviour
 {
-    private Label scoreValueLabel;
-    private int currentScore = 0;
+    private Label hpValueLabel;
 
     void Start()
     {
         Debug.Log("Initialized");
         var root = GetComponent<UIDocument>().rootVisualElement;
-        scoreValueLabel = root.Q<Label>("ScoreValue");
-        scoreValueLabel.text = currentScore.ToString();
+        //scoreValueLabel = root.Q<Label>("ScoreValue");
+        //scoreValueLabel.text = currentScore.ToString();
+
+        hpValueLabel = root.Q<Label>("HPValue");
     }
 
-    public void AddScore(int amount)
+    public void UpdateHP(int hp)
     {
-        currentScore += amount;
-        scoreValueLabel.text = currentScore.ToString();
-    }
-
-    void Update()
-    {
-        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+        if (hpValueLabel != null)
         {
-            AddScore(100);
+            hpValueLabel.text = hp.ToString();
         }
     }
 }

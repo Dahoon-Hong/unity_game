@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:Style src="/Assets/UIToolkit/ScoreStyle.uss" />
+    <ui:Style src="/Assets/UI/ScoreStyle.uss" />
     <ui:VisualElement name="ScoreContainer">
         <ui:Label text="1. SCORE: " name="ScoreLabel" />
         <ui:Label text="0" name="ScoreValue" />
+    </ui:VisualElement>
+    <ui:VisualElement name="HPContainer">
+        <ui:Label text="HP: " name="HPLabel" />
+        <ui:Label text="100" name="HPValue" />
     </ui:VisualElement>
 </ui:UXML>

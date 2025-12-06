@@ -478,6 +478,7 @@ GameObject:
   - component: {fileID: 683093332}
   - component: {fileID: 683093334}
   - component: {fileID: 683093333}
+  - component: {fileID: 683093335}
   m_Layer: 0
   m_Name: StageManager
   m_TagString: Untagged
@@ -514,6 +515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StageManager
   targetPrefab: {fileID: 8529213879513560285, guid: ea899271bfc216344b143ca2c59d97c6, type: 3}
   effectPrefab: {fileID: 2189392882021178349, guid: d1651ccb748336b428f1a0293fc0c8fe, type: 3}
+  scoreDisplayController: {fileID: 1884601418}
 --- !u!114 &683093333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,6 +562,18 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &683093335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683093330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1407a1af99a843541931dd858f387674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreDisplayController
 --- !u!1 &1097742482
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,43 @@
+{
+    "category": ["WEAPON", "ENEMY"],
+    "contents": [
+        {
+            "id": "weapon_dmg_01",
+            "category": "WEAPON",
+            "text_key": "UPGRADE_WEAPON_01", 
+            "icon_path": "Resources/Image/weapon_up_01",
+            "max_level": 999,
+            "effects": [
+                {
+                    "target_stat": "player_damage",
+                    "operator": "ADD",
+                    "base_value": 10,
+                    "value_per_level": 5
+                }
+            ]
+        },
+        {
+            "id": "enemy_challenge_01",
+            "category": "ENEMY",
+            "text_key": "UPGRADE_EVEMY_01", 
+            "icon_path": "Resources/Image/skull_gold",
+            "max_level": 50,
+            "effects": [
+                {
+                    "target_stat": "enemy_max_hp",
+                    "operator": "MULTIPLY",
+                    "base_value": 1.0,
+                    "value_per_level": 0.2
+                },
+                {
+                    "target_stat": "drop_exp",
+                    "operator": "MULTIPLY",
+                    "base_value": 1.0,
+                    "value_per_level": 0.3
+                }
+            ]
+        }
+    ]
+}
+
+    
