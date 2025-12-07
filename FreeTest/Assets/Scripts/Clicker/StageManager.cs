@@ -10,10 +10,14 @@ public class StageManager : MonoBehaviour
     public ScoreDisplayController scoreDisplayController;
 
     private GameObject currentTarget;
+    private Player player;
 
     void Start()
     {
+        player = new Player();
+        player.OnLevelUp += HandleLevelUp;
         SpawnTarget();
+        UpdatePlayerUI();
     }
 
     
@@ -61,12 +65,29 @@ public class StageManager : MonoBehaviour
 
         if (target.health <= 0)
         {
+            player.AddExperience(1);
+            UpdatePlayerUI();
             SpawnTarget();
         }
 
         if (effectPrefab != null)
         {
             Instantiate(effectPrefab, worldPosition, Quaternion.identity);
+        }
+    }
+
+    private void HandleLevelUp()
+    {
+        Debug.Log("Level Up! New Level: " + player.level);
+        UpdatePlayerUI();
+    }
+
+    private void UpdatePlayerUI()
+    {
+        if (scoreDisplayController != null)
+        {
+            scoreDisplayController.UpdateLevel(player.level);
+            scoreDisplayController.UpdateXP(player.experience, player.experienceToNextLevel);
         }
     }
 

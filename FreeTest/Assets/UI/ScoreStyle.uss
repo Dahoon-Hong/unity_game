@@ -1,6 +1,5 @@
-#HPContainer {
+#HPContainer, #LevelContainer, #XPContainer {
     position: absolute;
-    top: 20px;
     left: 50%;
     transform: translate(-50%, 0);
     flex-direction: row;
@@ -9,7 +8,19 @@
     border-radius: 5px;
 }
 
-#HPLabel, #HPValue {
+#HPContainer {
+    top: 20px;
+}
+
+#LevelContainer {
+    top: 80px;
+}
+
+#XPContainer {
+    top: 140px;
+}
+
+#HPLabel, #HPValue, #LevelLabel, #LevelValue, #XPLabel, #XPValue {
     font-size: 24px;
     color: yellow;
     margin: 0 5px;
