@@ -12,12 +12,17 @@ public class StageManager : MonoBehaviour
     private GameObject currentTarget;
     private Player player;
 
+    [SerializeField]
+    private CardSelector cardSelector;
+
+
     void Start()
     {
         player = new Player();
         player.OnLevelUp += HandleLevelUp;
         SpawnTarget();
         UpdatePlayerUI();
+        cardSelector.enabled = false;
     }
 
     
@@ -33,20 +38,7 @@ public class StageManager : MonoBehaviour
 
     void Update()
     {
-        // if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
-        // {
-        //     Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        //     RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
-        //     if (hit.collider == null)
-        //     {
-        //         Debug.Log("배경 클릭됨. 위치: " + mousePosition.ToString());
-                
-        //     }
-        //     else
-        //     {
-        //         Debug.Log(hit.collider.name + " 클릭됨. 위치: " + hit.point.ToString());
-        //     }
-        // }
+        
     }
 
     private void HandleTargetClicked(Target target, PointerEventData eventData)
@@ -56,7 +48,6 @@ public class StageManager : MonoBehaviour
         //Vector2 mousePosition = Mouse.current.position.ReadValue();
         //Vector2 worldPosition = mainCamera.ScreenToWorldPoint(mousePosition);
         Vector2 worldPosition = Camera.main.ScreenToWorldPoint(eventData.position);
-        target.OnHit();
 
         if (scoreDisplayController != null)
         {
@@ -80,6 +71,7 @@ public class StageManager : MonoBehaviour
     {
         Debug.Log("Level Up! New Level: " + player.level);
         UpdatePlayerUI();
+        cardSelector.enabled=true;
     }
 
     private void UpdatePlayerUI()

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:Style src="/Assets/UI/CardSelectionStyle.uss" />
+    <ui:VisualElement name="CardSelectionContainer" style="display: none;">
+        <ui:Label text="Level Up! Choose a card:" name="TitleLabel" />
+        <ui:VisualElement name="CardsContainer" />
+    </ui:VisualElement>
+</ui:UXML>

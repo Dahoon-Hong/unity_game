@@ -55,13 +55,4 @@ public class Target : MonoBehaviour, IPointerClickHandler, IPointerDownHandler
     {
         // OnTargetClicked?.Invoke(this, eventData); 
     }
-
-
-    public void OnHit()
-    {
-        // Debug.Log("hit");
-        
-        // Debug.Log($"Remaining health: {health}");
-
-    }
 }

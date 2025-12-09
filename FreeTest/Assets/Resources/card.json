@@ -36,6 +36,21 @@
                     "value_per_level": 0.3
                 }
             ]
+        },
+        {
+            "id": "weapon_dmg_02",
+            "category": "WEAPON",
+            "text_key": "UPGRADE_WEAPON_02", 
+            "icon_path": "Resources/Image/weapon_up_02",
+            "max_level": 999,
+            "effects": [
+                {
+                    "target_stat": "player_damage",
+                    "operator": "ADD",
+                    "base_value": 20,
+                    "value_per_level": 5
+                }
+            ]
         }
     ]
 }

@@ -6,7 +6,7 @@ public class Player
 {
     public int level = 1;
     public int experience = 0;
-    public int experienceToNextLevel = 10;
+    public int experienceToNextLevel = 1;
 
     public event Action OnLevelUp;
 

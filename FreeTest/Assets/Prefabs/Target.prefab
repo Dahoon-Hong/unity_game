@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7118999829247270520}
   - component: {fileID: 4459206869131679415}
   - component: {fileID: 4233783878886465407}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,6 +50,7 @@ MonoBehaviour:
   - {fileID: -4091240364723308270, guid: dc0a167d7bfe9824d9717d53e0d11034, type: 3}
   - {fileID: 8114457730265916154, guid: dc0a167d7bfe9824d9717d53e0d11034, type: 3}
   changeInterval: 1
+  health: 100
 --- !u!212 &4459206869131679415
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -95,7 +96,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1531638243
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -4091240364723308270, guid: dc0a167d7bfe9824d9717d53e0d11034, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
